@@ -11,7 +11,7 @@ export function Projects() {
       <div className="h-[25rem] w-full flex items-center justify-center ">
         <PinContainer
           title="/azlinliana.com"
-          href=""
+          href="/azlinliana.com"
         >
           <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
             <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
@@ -28,7 +28,7 @@ export function Projects() {
 
         <PinContainer
           title="/sdms.project"
-          href=""
+          href="/sdms.project"
         >
           <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
             <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
@@ -45,7 +45,7 @@ export function Projects() {
 
         <PinContainer
           title="/minty.project"
-          href=""
+          href="/minty.project"
         >
           <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
             <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
@@ -62,7 +62,7 @@ export function Projects() {
 
         <PinContainer
           title="/other.project"
-          href=""
+          href="/other.project"
         >
           <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
             <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
