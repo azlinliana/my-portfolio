@@ -1,11 +1,15 @@
 "use client";
 import { TextHoverEffect } from "./ui/text-hover-effect";
 
+import Image from "next/image";
+
 import { Tabs } from "./ui/tabs";
 import { ProfessionalExperiences } from "./about-tab/professional-experiences";
 import { Education } from "./about-tab/education";
 import { TechnicalSkills } from "./about-tab/technical-skills";
 import { Certification } from "./about-tab/certification";
+
+import astronautAvatar from "../public/about/astronaut-avatar.svg";
 
 export function About() {
   const tabs = [
@@ -62,22 +66,23 @@ export function About() {
       </div>
 
       <div className="flex flex-col items-center justify-center text-center space-y-4">
-        {/* Avatar with online indicator */}
-        <div className="relative">
-          <img
-            src="https://via.placeholder.com/120"
-            alt="Avatar"
-            className="w-28 h-28 rounded-full border-4 border-white shadow-lg object-cover"
-          />
-          {/* Online Indicator */}
-          <span className="absolute bottom-1 right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></span>
-        </div>
+      <div className="relative w-50 h-50">
+        <Image
+          src={astronautAvatar}
+          alt="Avatar"
+          fill
+          className="rounded-full border-4 border-white shadow-lg object-cover"
+        />
+        
+        {/* Online Indicator */}
+        <span className="absolute bottom-5 right-3 w-6 h-6 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+      </div>
 
         {/* Name */}
         <h1 className="text-xl font-bold">NUR AZLIN LIANA BINTI MOHD ADLAN</h1>
 
         {/* Other information */}
-        <p className="text-gray-500 text-sm">azlinliana.adlan@gmail.com | Sg. Buloh, Selangor</p>
+        <p className="text-gray-500 text-sm">azlinliana.adlan@gmail.com | Sg. Buloh, Selangor, Malaysia</p>
 
         {/* About Me */}
         <div className="max-w-3xl px-4 text-justify text-base leading-relaxed text-gray-700">
