@@ -1,112 +1,147 @@
 "use client";
+import React, { useState } from "react";
+
 import { TextHoverEffect } from "./ui/text-hover-effect";
+import { BackgroundGradient } from "./ui/background-gradient";
 
 import Image from "next/image";
 
-import { Tabs } from "./ui/tabs";
-import { ProfessionalExperiences } from "./about-tab/professional-experiences";
-import { Education } from "./about-tab/education";
+import { Experiences } from "./about-tab/experiences";
+import { Educations } from "./about-tab/educations";
 import { TechnicalSkills } from "./about-tab/technical-skills";
-import { Certification } from "./about-tab/certification";
+import { Certifications } from "./about-tab/certifications";
 
 import astronautAvatar from "../public/about/astronaut-avatar.svg";
 
+import {
+  IconMail,
+  IconMapPin
+} from "@tabler/icons-react";
+
 export function About() {
-  const tabs = [
+  const [activeTab, setActiveTab] = useState("experiences");
+
+  const tabItems = [
     {
+      id: "experiences",
       title: "Experiences",
-      value: "experiences",
-      content: (
-        <div className="w-full relative rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Professional Experiences Tab</p>
-
-          <ProfessionalExperiences />
-        </div>
-      ),
+      content: <Experiences />,
     },
     {
-      title: "Education",
-      value: "education",
-      content: (
-        <div className="w-full relative rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Education Tab</p>
-
-          <Education />
-        </div>
-      ),
+      id: "educations",
+      title: "Educations",
+      content: <Educations />,
     },
     {
+      id: "skills",
       title: "Skills",
-      value: "skills",
-      content: (
-        <div className="w-full relative rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Technical Skills Tab</p>
-
-          <TechnicalSkills />
-        </div>
-      ),
+      content: <TechnicalSkills />,
     },
     {
-      title: "Certification",
-      value: "certification",
-      content: (
-        <div className="w-full relative rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Certification Tab</p>
-
-          <Certification />
-        </div>
-      ),
+      id: "certifications",
+      title: "Certifications",
+      content: <Certifications />,
     },
   ];
-
+  
   return (
     <>
       <div className="h-[10rem] flex items-center justify-center">
         <TextHoverEffect text="A B O U T" />
       </div>
 
-      <div className="flex flex-col items-center justify-center text-center space-y-4">
-      <div className="relative w-50 h-50">
-        <Image
-          src={astronautAvatar}
-          alt="Avatar"
-          fill
-          className="rounded-full border-4 border-white shadow-lg object-cover"
-        />
-        
-        {/* Online Indicator */}
-        <span className="absolute bottom-5 right-3 w-6 h-6 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-      </div>
+      <div className="flex flex-col items-center justify-center text-center space-y-10 pt-5 w-full">
+        <div className="flex flex-col items-center justify-center text-center">
+          {/* Avatar with indicator */}
+          <div className="relative w-48 h-48">
+            <Image
+              src={astronautAvatar}
+              alt="Avatar"
+              fill
+              className="rounded-full border-4 border-white shadow-lg object-cover"
+            />
+            <span className="absolute bottom-5 right-3 w-6 h-6 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+          </div>
 
-        {/* Name */}
-        <h1 className="text-xl font-bold">NUR AZLIN LIANA BINTI MOHD ADLAN</h1>
+          <div className="space-y-5">
+            {/* Name */}
+            <h1 className="text-3xl font-bold mt-15">NUR AZLIN LIANA BINTI MOHD ADLAN</h1>
 
-        {/* Other information */}
-        <p className="text-gray-500 text-sm">azlinliana.adlan@gmail.com | Sg. Buloh, Selangor, Malaysia</p>
+            {/* Other information */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-2 text-neutral-600 dark:text-neutral-200 text-lg mt-1">
+              <div className="flex items-center gap-1">
+                <IconMail />
 
-        {/* About Me */}
-        <div className="max-w-3xl px-4 text-justify text-base leading-relaxed text-gray-700">
-          <p>
-            I’m a software engineering grad who loves building backend systems that actually solve problems — mostly with Laravel, REST APIs, and SQL databases.
-          </p>
-          <br />
-          <p>
-            One of the coolest projects I worked on was leading the backend for an internal system at my company’s Audit Unit. I helped create APIs that made tracking staff disciplinary records way easier and more efficient.
-          </p>
-          <br />
-          <p>
-            I enjoy working with teams where I can learn and contribute to meaningful projects. Backend is my main jam, but I’m happy to dive into full-stack stuff and collaborate with frontend folks to make sure everything runs smoothly.
-          </p>
-          <br />
-          <p>
-            Outside of work, I’m all about consistency, teamwork, and doing things right — even if it takes a bit longer. If you’re building something cool or want to team up, just reach out!
+                <span>azlinliana.adlan@gmail.com</span>
+              </div>
+
+              ┃
+              
+              <div className="flex items-center gap-1">
+                <IconMapPin />
+
+                <span>Sg. Buloh, Selangor, Malaysia</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Summary */}
+        <div className="w-full text-left text-base leading-relaxed text-gray-700">
+          <h2 className="text-lg font-extrabold bg-gradient-to-r from-violet-300 to-blue-300 bg-clip-text text-transparent py-5">
+            S U M M A R Y
+          </h2>
+
+          <p className="text-neutral-600 dark:text-neutral-200 text-justify">
+            Software engineering graduate with nearly three (3) years of hands-on experience, focusing on backend development with working knowledge of full-stack technologies. 
+            Passionate about building clean, maintainable systems that support real users and business processes.
+            While backend development is my primary interest and strength, I work effectively alongside frontend developers to ensure smooth integration and overall system performance. 
+            Known for being hardworking, reliable, and committed to continuous learning and technical growth within collaborative development environments.
           </p>
         </div>
       </div>
 
-      {/* Tab section */}
-      <div className="w-full max-w-5xl mx-auto flex flex-col items-start justify-start my-40 px-2 sm:px-4 py-5 [perspective:1000px] rounded-xl">
-        <Tabs tabs={tabs} />
+      {/* Tabs Section */}
+      <div className="w-full py-10">
+        <BackgroundGradient>
+          <div className="w-full bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-lg">
+            {/* Tab Headers */}
+            <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
+              <ul
+                className="flex flex-wrap -mb-px text-base font-semibold text-center"
+                role="tablist"
+              >
+                {tabItems.map((tab) => (
+                  <li className="me-2" key={tab.id} role="presentation">
+                    <button
+                      className={`inline-block p-4 border-b-2 transition-all duration-200 ${
+                        activeTab === tab.id
+                          ? "bg-gradient-to-r from-violet-300 to-blue-300 bg-clip-text text-transparent border-purple-600 dark:border-purple-500"
+                          : "text-gray-900 dark:text-gray-300 border-transparent hover:border-gray-300"
+                      }`}
+                      type="button"
+                      role="tab"
+                      aria-selected={activeTab === tab.id}
+                      onClick={() => setActiveTab(tab.id)}
+                    >
+                      {tab.title}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Tab Content Panels */}
+            {tabItems.map((tab) =>
+              activeTab === tab.id ? (
+                <div key={tab.id} role="tabpanel">
+                  {tab.content}
+                </div>
+              ) : null
+            )}
+          </div>
+        </BackgroundGradient>
       </div>
     </>
   );
