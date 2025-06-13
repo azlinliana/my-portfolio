@@ -3,29 +3,29 @@ import { IconExternalLink } from "@tabler/icons-react";
 export function Certifications() {
   return (
     <div className="p-4">
-      <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-5">
-        Certificate(s)
+      <h2 className="text-xl font-extrabold bg-gradient-to-r from-violet-300 to-blue-300 bg-clip-text text-transparent py-5">
+        CERTIFICATE(S)
       </h2>
 
       <div className="mb-10">
-        <div className="flex justify-between items-start">
+        <div className="flex justify-between items-start mb-8">
           <div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100">
               Certified Kubernetes Administrator
             </h3>
           </div>
 
-          <span className="text-sm text-gray-800 dark:text-gray-100 italic font-bold">
+          <span className="text-lg text-gray-800 dark:text-gray-100 italic font-bold">
             The Linux Foundation
           </span>
         </div>
 
-        <ul className="list-disc list-inside mt-2 text-sm text-gray-600 dark:text-gray-300">
+        <ul className="list-disc list-inside mt-2 text-lg text-gray-600 dark:text-gray-300">
           <li>Issued: September 2024</li>
           <li>Expires: September 2026</li>
         </ul>
 
-        <div className="mt-5">
+        <div className="mt-8">
           <a
             href="https://www.credly.com/badges/17f8ad43-8ec3-4fb8-8a30-722122727e60/public_url"
             target="_blank"
