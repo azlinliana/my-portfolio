@@ -24,22 +24,22 @@ export function About() {
   const tabItems = [
     {
       id: "experiences",
-      title: "Experiences",
+      title: "EXPERIENCES",
       content: <Experiences />,
     },
     {
       id: "educations",
-      title: "Educations",
+      title: "EDUCATIONS",
       content: <Educations />,
     },
     {
       id: "skills",
-      title: "Skills",
+      title: "SKILLS",
       content: <TechnicalSkills />,
     },
     {
       id: "certifications",
-      title: "Certifications",
+      title: "CERTIFICATIONS",
       content: <Certifications />,
     },
   ];
@@ -88,12 +88,12 @@ export function About() {
         </div>
 
         {/* Summary */}
-        <div className="w-full text-left text-base leading-relaxed text-gray-700">
-          <h2 className="text-lg font-extrabold bg-gradient-to-r from-violet-300 to-blue-300 bg-clip-text text-transparent py-5">
-            S U M M A R Y
+        <div className="w-full text-left text-base leading-relaxed text-gray-700 pb-10">
+          <h2 className="text-xl font-extrabold bg-gradient-to-r from-violet-300 to-blue-300 bg-clip-text text-transparent my-5">
+            SUMMARY
           </h2>
 
-          <p className="text-neutral-600 dark:text-neutral-200 text-justify">
+          <p className="text-neutral-600 dark:text-neutral-200 text-justify text-lg">
             Software engineering graduate with nearly three (3) years of hands-on experience, focusing on backend development with working knowledge of full-stack technologies. 
             Passionate about building clean, maintainable systems that support real users and business processes.
             While backend development is my primary interest and strength, I work effectively alongside frontend developers to ensure smooth integration and overall system performance. 
@@ -109,7 +109,7 @@ export function About() {
             {/* Tab Headers */}
             <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
               <ul
-                className="flex flex-wrap -mb-px text-base font-semibold text-center"
+                className="flex flex-wrap -mb-px text-lg font-semibold text-center"
                 role="tablist"
               >
                 {tabItems.map((tab) => (
@@ -117,7 +117,7 @@ export function About() {
                     <button
                       className={`inline-block p-4 border-b-2 transition-all duration-200 ${
                         activeTab === tab.id
-                          ? "bg-gradient-to-r from-violet-300 to-blue-300 bg-clip-text text-transparent border-purple-600 dark:border-purple-500"
+                          ? "text-violet-300 dark:text-violet-300 font-bold"
                           : "text-gray-900 dark:text-gray-300 border-transparent hover:border-gray-300"
                       }`}
                       type="button"
