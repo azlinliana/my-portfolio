@@ -93,7 +93,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 md:flex dark:bg-neutral-900",
+        "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-white/10 backdrop-blur-md px-4 pb-3 md:flex shadow-2xl ring-1 ring-white/20 dark:bg-white/5 dark:ring-white/10",
         className,
       )}
     >
@@ -136,26 +136,32 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <a href={href}>
+    <a href={href} className="relative">
       <motion.div
         ref={ref}
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800"
+        className="group relative flex aspect-square items-center justify-center rounded-full bg-gradient-to-br from-white/30 to-white/10 dark:from-neutral-700/30 dark:to-neutral-800/10 shadow-xl ring-1 ring-white/20 backdrop-blur-md transition-transform duration-200 hover:scale-105"
       >
+        {/* Background Glow */}
+        <div className="absolute -z-10 h-full w-full animate-pulse rounded-full bg-gradient-to-br from-pink-300/30 to-blue-400/20 blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+
+        {/* Hover Tooltip */}
         <AnimatePresence>
           {hovered && (
             <motion.div
-              initial={{ opacity: 0, y: 10, x: "-50%" }}
+              initial={{ opacity: 0, y: -10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
-              exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="absolute -top-8 left-1/2 w-fit whitespace-pre rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white"
+              exit={{ opacity: 0, y: -5, x: "-50%" }}
+              className="absolute top-full left-1/2 mt-2 w-fit whitespace-pre rounded-md border border-gray-200 bg-white px-4 py-1 text-sm text-neutral-700 shadow-md dark:border-neutral-800 dark:bg-neutral-800 dark:text-white"
             >
               {title}
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Icon */}
         <motion.div
           style={{ width: widthIcon, height: heightIcon }}
           className="flex items-center justify-center"
