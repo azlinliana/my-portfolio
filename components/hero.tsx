@@ -95,11 +95,22 @@ export function Hero() {
             <FloatingDock items={links} />
 
             {/* Download resume button */}
-            <button className="p-[3px] relative">
+            <button
+              className="p-[3px] relative"
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = "https://drive.google.com/file/d/1qpm5jSQl91_y0To5T2SuXFV6vsnsFXsN/view?usp=drive_link";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-violet-300 to-blue-300 rounded-lg" />
 
               <div className="px-8 py-3 bg-black rounded-[6px] relative group transition duration-200 text-white hover:bg-transparent flex items-center gap-2 text-lg lg:text-xl font-semibold">
-                <IconFileSymlink className="w-8 h-8" /><span>Resume</span>
+                <IconFileSymlink className="w-8 h-8" />
+                
+                <span>Resume</span>
               </div>
             </button>
           </div>
