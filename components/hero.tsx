@@ -99,7 +99,7 @@ export function Hero() {
               className="p-[3px] relative"
               onClick={() => {
                 const link = document.createElement("a");
-                link.href = "https://drive.google.com/file/d/1qpm5jSQl91_y0To5T2SuXFV6vsnsFXsN/view?usp=drive_link";
+                link.href = "https://drive.google.com/file/d/1evnL9-sSo2s2UyaUiwNx_6anLrUPWGmv/view?usp=sharing";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
@@ -109,7 +109,7 @@ export function Hero() {
 
               <div className="px-8 py-3 bg-black rounded-[6px] relative group transition duration-200 text-white hover:bg-transparent flex items-center gap-2 text-lg lg:text-xl font-semibold">
                 <IconFileSymlink className="w-8 h-8" />
-                
+
                 <span>Resume</span>
               </div>
             </button>
