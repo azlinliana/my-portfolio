@@ -12,6 +12,13 @@ export function Navbar({ className }: { className?: string }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const navItems = [
+    { name: "Home", href: "#hero" },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+  ];
+
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -59,21 +66,11 @@ export function Navbar({ className }: { className?: string }) {
         {/* Right - Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-6">
           <Menu setActive={setActive}>
-            <a href="#hero">
-              <MenuItem setActive={setActive} active={active} item="Home" />
-            </a>
-
-            <a href="#about">
-              <MenuItem setActive={setActive} active={active} item="About" />
-            </a>
-
-            <a href="#skills">
-              <MenuItem setActive={setActive} active={active} item="Skills" />
-            </a>
-
-            <a href="#projects">
-              <MenuItem setActive={setActive} active={active} item="Projects" />
-            </a>
+            {navItems.map(({ name, href }) => (
+              <a key={name} href={href}>
+                <MenuItem setActive={setActive} active={active} item={name} />
+              </a>
+            ))}
           </Menu>
         </div>
 
@@ -110,14 +107,15 @@ export function Navbar({ className }: { className?: string }) {
       {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden mt-4 space-y-4 font-medium text-white text-sm backdrop-blur-lg bg-gradient-to-r from-blue-300/20 to-violet-300/10 border border-white/10 px-4 py-6 rounded-xl transition-all duration-300">
-          {["Home", "About", "Skills", "Projects"].map((item) => (
-            <button
-              key={item}
+          {navItems.map(({ name, href }) => (
+            <a
+              key={name}
+              href={href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block w-full text-left"
+              className="block w-full text-left hover:underline"
             >
-              {item}
-            </button>
+              {name}
+            </a>
           ))}
         </div>
       )}
