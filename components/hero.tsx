@@ -85,9 +85,8 @@ export function Hero() {
           <TypewriterEffect words={words} />
 
           <p className="mt-4 text-base sm:text-lg md:text-xl text-neutral-600 dark:text-neutral-200 max-w-md sm:max-w-lg text-justify leading-relaxed">
-            This portfolio is a collection of projects that I’ve built with curiosity and intention — 
-            each one shaped by real problems, countless learning moments, and a desire to create web experiences that feel intuitive, reliable, and genuinely useful. 
-            It reflects not just what I’ve learned technically, but how I think about building for people, collaborating with others, and growing as a developer over time. 
+            Crafting scalable, adaptable systems – from robust back-end logic to intuitive, impactful front-end. 
+            Clean code advocate. Purposeful designer. Relentless problem solver.
           </p>
 
           <div className="mt-10 w-fit mx-auto lg:mx-0 flex items-center gap-4">
