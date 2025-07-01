@@ -94,10 +94,10 @@ export function About() {
           </h2>
 
           <p className="text-neutral-600 dark:text-neutral-200 text-justify text-lg">
-            Software engineering graduate with nearly three (3) years of hands-on experience, focusing on backend development with working knowledge of full-stack technologies. 
-            Passionate about building clean, maintainable systems that support real users and business processes.
-            While backend development is my primary interest and strength, I work effectively alongside frontend developers to ensure smooth integration and overall system performance. 
-            Known for being hardworking, reliable, and committed to continuous learning and technical growth within collaborative development environments.
+            Full-Stack Developer with 3 years of hands-on experience delivering web applications in fintech, internal operations, and digital submission systems. 
+            Skilled in both front-end and back-end development using Laravel, RESTful APIs, and React. 
+            After earning the Certified Kubernetes Administrator (CKA) certification, I actively build with knowledge in containerization, CI/CD, and DevOps tooling. 
+            Open to full-stack, front-end or backend roles where I can continue growing and contributing to impactful systems.
           </p>
         </div>
       </div>
