@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Merriweather } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,16 +8,9 @@ const inter = Inter({
   display: "swap",
 });
 
-const merriweather = Merriweather({
-  variable: "--font-merriweather",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "700"], // Regular and bold
-});
-
 export const metadata: Metadata = {
   title: "Azlin Liana's Portfolio",
-  description: "My first web developer portfolio",
+  description: "My web developer portfolio",
 };
 
 export default function RootLayout({
@@ -28,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${merriweather.variable} antialiased`}
+        className={`${inter.variable} antialiased`}
       >
         {children}
       </body>
