@@ -1,29 +1,29 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Menu, MenuItem } from "./ui/navbar-menu";
+import { useState, useEffect } from "react";
 import { IconBaselineDensityMedium, IconX } from "@tabler/icons-react";
-import Image from "next/image";
-import logo from "../public/logo.png";
 import { cn } from "@/lib/utils";
 
-export function Navbar({ className }: { className?: string }) {
-  const [active, setActive] = useState<string | null>(null);
+import Image from "next/image";
+import Logo from "../public/logo.svg";
+
+export function Navbar() {
+  // Mobile & scroll state
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Navbar item
   const navItems = [
     { name: "Home", href: "#hero" },
     { name: "About", href: "#about" },
+    { name: "Works", href: "#works" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
   ];
 
+  // Navbar scroll
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
+    const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -31,88 +31,59 @@ export function Navbar({ className }: { className?: string }) {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-colors duration-300",
+        "fixed top-0 inset-x-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-black/10 backdrop-blur-md border-b border-white/10"
-          : "bg-transparent",
-        className
+          ? "bg-white/10 backdrop-blur-md border-b border-white/10"
+          : "bg-transparent"
       )}
     >
-      <div className="max-w-7xl w-full mx-auto px-4 lg:px-10 flex items-center justify-between py-4">
-        {/* Left - Brand */}
-        <a href="#hero">
-          <div className="flex items-center gap-4">
-            <Image
-              src={logo}
-              alt="Azlin Liana Logo"
-              width={48}
-              height={48}
-              className="object-contain"
-            />
-
-            <span
-              style={{
-                fontFamily: "var(--font-brand)",
-                WebkitTextStroke: "0.2px white",
-                letterSpacing: "0.1em",
-              }}
-              className="text-white text-2xl sm:text-3xl lg:text-4xl uppercase leading-tight"
-            >
-              AZLIN LIANA
-            </span>
-          </div>
+      <div className="w-full px-10 sm:px-30 flex items-center justify-between py-4">
+        <a href="#hero" className="flex items-center gap-4">
+          <Image
+            src={Logo}
+            alt="Azlin Liana Logo"
+            width={40}
+            height={40}
+            className="transition-transform duration-300 hover:drop-shadow-[0_0_10px_#d8b4fe]"
+          />        
         </a>
 
-        {/* Right - Desktop Menu */}
-        <div className="hidden lg:flex items-center space-x-6">
-          <Menu setActive={setActive}>
-            {navItems.map(({ name, href }) => (
-              <a key={name} href={href}>
-                <MenuItem setActive={setActive} active={active} item={name} />
+        <ul className="hidden lg:flex items-center gap-8 text-white text-md font-medium">
+          {navItems.map(({ name, href }) => (
+            <li key={name}>
+              <a
+                href={href}
+                className="text-[#f1f9ff] font-normal hover:text-purple-300 transition duration-200"
+              >
+                {name}
               </a>
-            ))}
-          </Menu>
-        </div>
+            </li>
+          ))}
+        </ul>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile navbar hamburger & x */}
         <div className="lg:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="transition-all duration-300 ease-in-out"
+            className="relative z-50 transition-transform duration-300 ease-in-out transform hover:rotate-90"
           >
-            <span
-              className={cn(
-                "inline-block transition-all duration-300 ease-in-out",
-                mobileMenuOpen
-                  ? "rotate-90 opacity-0 scale-75 absolute"
-                  : "rotate-0 opacity-100 scale-100"
-              )}
-            >
-              <IconBaselineDensityMedium className="h-6 w-6 text-white" />
-            </span>
-            <span
-              className={cn(
-                "inline-block transition-all duration-300 ease-in-out",
-                mobileMenuOpen
-                  ? "rotate-0 opacity-100 scale-100"
-                  : "-rotate-90 opacity-0 scale-75 absolute"
-              )}
-            >
+            {mobileMenuOpen ? (
               <IconX className="h-6 w-6 text-white" />
-            </span>
+            ) : (
+              <IconBaselineDensityMedium className="h-6 w-6 text-white" />
+            )}
           </button>
         </div>
       </div>
-
-      {/* Mobile Dropdown Menu */}
+      
       {mobileMenuOpen && (
-        <div className="lg:hidden mt-4 space-y-4 font-medium text-white text-sm backdrop-blur-lg bg-gradient-to-r from-blue-300/20 to-violet-300/10 border border-white/10 px-4 py-6 rounded-xl transition-all duration-300">
+        <div className="lg:hidden px-4 pb-6 pt-2 flex flex-col items-center space-y-4 font-medium text-sm backdrop-blur-lg bg-gradient-to-r from-blue-300/20 to-violet-300/10 border-t border-white/10">
           {navItems.map(({ name, href }) => (
             <a
               key={name}
               href={href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block w-full text-left hover:underline"
+              className="text-center text-[#f1f9ff] font-normal hover:text-purple-300 transition duration-200"
             >
               {name}
             </a>
