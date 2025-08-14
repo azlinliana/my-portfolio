@@ -104,23 +104,44 @@ export default function About() {
                 </div>
 
                 {/* About description */}
-                <div className="w-full max-w-3xl text-juestify space-y-6">
-                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed text-center">
+                <div className="text-justify space-y-6">
+                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed text-justify">
                         A developer on a journey to understand how things work and how to make them work better.
                         Passionate about crafting systems that are scalable, adaptable, and thoughtfully structured —
                         from back-end logic to front-end experience.
                     </p>
 
-                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed text-center">
-                        Driven by curiosity and intention. I learn through building, write cleaner code with every
-                        project, and focus on solving problems that matter. Good software should be quiet, helpful,
-                        and built with care. That’s the kind of work I aim to contribute to.
+                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed text-justify">
+                        Driven by curiosity and intention. I learn through building, write cleaner code with every project, 
+                        and focus on solving problems that matter. Good software should be quiet, helpful, and built with care. 
+                        That’s the kind of work I aim to contribute to.
                     </p>
 
-                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed text-center">
-                        Not here to do everything — just the right things, done well. Step by step, layer by layer —
-                        like any mission worth launching.
+                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed text-justify">
+                        I embrace challenges as chances to grow, experiment, and iterate. I value clarity, simplicity, 
+                        and thoughtful architecture, believing that well-crafted code tells a story. Collaboration and 
+                        learning from others guide me, because the best solutions rarely come alone.
                     </p>
+
+                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed text-justify">
+                        Not here to do everything — just the right things, done well. Step by step, layer by layer, 
+                        carefully building each piece with intention and care. Like any mission worth launching, I 
+                        focus on thoughtful planning, precise execution, and continuous improvement — making sure 
+                        every part fits, every decision matters, and the end result is something resilient, 
+                        purposeful, and meaningful.
+                    </p>
+
+                    <div className="mt-8 flex flex-col items-center space-y-3">
+                        {/* Top stardust line */}
+                        <div className="text-center text-2xl text-purple-400 dark:text-purple-300 animate-pulse">
+                            ˗ˏˋ ★ ˎˊ˗
+                        </div>
+
+                        {/* Quote */}
+                        <blockquote className="text-center text-lg sm:text-xl italic text-purple-300 dark:text-purple-300 max-w-2xl px-4">
+                            "Every line of code is a star in the universe I’m creating — small, intentional, and capable of lighting the way."
+                        </blockquote>
+                    </div>
                 </div>
             </div>
         </ContentLayout>
