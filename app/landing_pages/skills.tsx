@@ -145,11 +145,11 @@ export default function Skills() {
   return (
     <ContentLayout>
       <TitleSection text="S K I L L S" />
-
-      <div>
+      
+      <div className="flex flex-col items-justify space-y-12 w-full py-12">
         {/* Tab header */}
         {/* Desktop: tab buttons */}
-        <div className="hidden sm:flex gap-4 justify-center py-12">
+        <div className="hidden sm:flex gap-4 justify-center">
           {tabs.map(({ label, icon: Icon }) => {
             const isActive = activeTab === label;
 
@@ -174,7 +174,7 @@ export default function Skills() {
         </div>
 
         {/* Mobile: full-width magic border dropdown with icons */}
-        <div className="sm:hidden w-full relative py-12">
+        <div className="sm:hidden w-full relative">
           <MagicBorder className="w-full">
             <button
               onClick={() => setOpenDropdown((prev) => !prev)}
@@ -215,45 +215,43 @@ export default function Skills() {
         </div>
 
         {/* Tab content */}
-        <div className="flex flex-col md:flex-row items-center justify-center">
-          {skillCards
-            .filter((section) => section.title === activeTab)
-            .map((section) => (
-              <div key={section.title}>
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 justify-items-center">
-                  <AnimatedTooltip
-                    items={section.subSections.flatMap((sub) =>
-                      sub.skills.map((skill, idx) => ({
-                        id: `${skill.name}-${idx}`,
-                        name: skill.name,
-                        level: skill.level as
-                          | "Beginner"
-                          | "Intermediate"
-                          | "Advanced"
-                          | "Dormant",
-                      }))
-                    )}
-                  >
-                    {section.subSections.flatMap((sub) =>
-                      sub.skills.map((skill, idx) => (
-                        <div key={`${skill.name}-${idx}`} className="w-full flex justify-center m-2">
-                          <BackgroundGradient className="relative w-[160px] h-[160px] rounded-2xl flex flex-col items-center justify-center bg-white dark:bg-zinc-900 shadow-xl hover:shadow-2xl transition-shadow group">
-                            <Image
-                              src={skill.icon}
-                              alt={skill.name}
-                              width={90}
-                              height={90}
-                              className="object-contain mb-3"
-                            />
-                          </BackgroundGradient>
-                        </div>
-                      ))
-                    )}
-                  </AnimatedTooltip>
-                </div>
-              </div>
-            ))}
-        </div>
+        {skillCards
+          .filter((section) => section.title === activeTab)
+          .map((section) => (
+            <div 
+              key={section.title} 
+              className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10">
+              <AnimatedTooltip
+                items={section.subSections.flatMap((sub) =>
+                  sub.skills.map((skill, idx) => ({
+                    id: `${skill.name}-${idx}`,
+                    name: skill.name,
+                    level: skill.level as
+                      | "Beginner"
+                      | "Intermediate"
+                      | "Advanced"
+                      | "Dormant",
+                  }))
+                )}
+              >
+                {section.subSections.flatMap((sub) =>
+                  sub.skills.map((skill) => (
+                    <div>
+                      <BackgroundGradient className="flex flex-col items-center justify-center bg-white dark:bg-zinc-900 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow group h-[180px]">
+                        <Image
+                          src={skill.icon}
+                          alt={skill.name}
+                          width={80}
+                          height={80}
+                          className="object-contain"
+                        />
+                      </BackgroundGradient>
+                    </div>
+                  ))
+                )}
+              </AnimatedTooltip>
+            </div>
+          ))}
       </div>
     </ContentLayout>
   );
