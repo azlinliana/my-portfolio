@@ -237,7 +237,7 @@ export default function Skills() {
               >
                 {section.subSections.flatMap((sub) =>
                   sub.skills.map((skill) => (
-                    <div>
+                    <div key={skill.name}>
                       <BackgroundGradient className="flex flex-col items-center justify-center bg-white dark:bg-zinc-900 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow group h-[180px]">
                         <Image
                           src={skill.icon}
