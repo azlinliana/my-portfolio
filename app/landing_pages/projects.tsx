@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 
 import ContentLayout from "@/components/layout/content-layout";
 import TitleSection from "@/components/title-section";
@@ -23,7 +23,7 @@ const projectCards = [
     description: "Student disciplinary.",
     projectLink: "https://github.com/nabbysidek/sdms.git",
     techs: [
-      { name: "Next.js"}
+      { name: "React"}
     ],
     imageCover: {sdmsCover}
   },
@@ -31,9 +31,17 @@ const projectCards = [
     description: "Track cash flow.",
     projectLink: "https://github.com/azlinliana/minty-frontend.git",
     techs: [
-      { name: "Next.js"}
+      { name: "React"}
     ],
     imageCover: {mintyCover}
+  },
+  { name: "MEDRET",
+    description: "Medication reminder application.",
+    projectLink: "https://github.com/azlinliana/medret.git",
+    techs: [
+      { name: "Flutter"}
+    ],
+    imageCover: {medretCover}
   },
 ];
 
@@ -54,13 +62,13 @@ export default function Projects() {
                 href={project.projectLink}
                 containerClassName="w-full h-full"
               >
-                <a href={project.projectLink} className="block w-full h-full">
+                <div className="block w-full h-full">
                   <div className="flex flex-col p-4 tracking-tight text-slate-100/50 w-full h-full">
                     <h3 className="font-bold text-base text-slate-100 mb-2">{project.name}</h3>
                     <p className="text-base font-normal text-slate-500">{project.description}</p>
                     <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" />
                   </div>
-                </a>
+                </div>
               </PinContainer>
             </div>
           ))}
