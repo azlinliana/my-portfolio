@@ -57,7 +57,7 @@ export const AnimatedTooltip = ({ items, children }: AnimatedTooltipProps) => {
                 }}
                 exit={{ opacity: 0, y: 10, scale: 0.8 }}
                 style={{ translateX, rotate }}
-                className="absolute top-full mt-2 left-1/2 z-50 -translate-x-1/2 whitespace-nowrap rounded-md bg-black px-4 py-2 text-sm shadow-lg" // ⬅️ Changed from text-xs to text-sm here
+                className="absolute top-full mt-2 left-1/2 z-50 -translate-x-1/2 whitespace-nowrap rounded-md bg-black px-4 py-2 text-sm shadow-lg"
               >
                 <div className="text-xl font-semibold text-white">{item.name}</div>
 
