@@ -139,7 +139,7 @@ export default function About() {
 
                         {/* Quote */}
                         <blockquote className="text-center text-lg sm:text-xl italic text-purple-300 dark:text-purple-300 max-w-2xl px-4">
-                            "Every line of code is a star in the universe I’m creating — small, intentional, and capable of lighting the way."
+                        &quot;Every line of code is a star in the universe I’m creating — small, intentional, and capable of lighting the way.&quot;
                         </blockquote>
                     </div>
                 </div>
