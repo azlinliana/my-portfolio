@@ -57,9 +57,9 @@ export const AnimatedTooltip = ({ items, children }: AnimatedTooltipProps) => {
                 }}
                 exit={{ opacity: 0, y: 10, scale: 0.8 }}
                 style={{ translateX, rotate }}
-                className="absolute top-full mt-2 left-1/2 z-50 -translate-x-1/2 whitespace-nowrap rounded-md bg-black px-4 py-2 text-sm shadow-lg"
+                className="absolute top-full mt-2 left-1/2 z-50 -translate-x-1/2 whitespace-nowrap rounded-md bg-white px-4 py-2 text-sm shadow-lg"
               >
-                <div className="text-xl font-semibold text-white">{item.name}</div>
+                <div className="text-xl text-center font-semibold bg-slate-50">{item.name}</div>
 
                 {item.designation && (
                   <div className="text-lg text-white">{item.designation}</div>
@@ -67,7 +67,7 @@ export const AnimatedTooltip = ({ items, children }: AnimatedTooltipProps) => {
 
                 {item.level && (
                   <div
-                    className={`text-lg mt-1 ${
+                    className={`text-lg text-center mt-1 ${
                       item.level === "Beginner"
                         ? "text-amber-400"
                         : item.level === "Intermediate"
