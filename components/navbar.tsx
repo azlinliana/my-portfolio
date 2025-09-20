@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 
 import Image from "next/image";
 import Logo from "../public/logo.svg";
+import Logo2 from "../public/logo-2.svg";
 
 export function Navbar() {
   // Mobile & scroll state
@@ -15,10 +16,10 @@ export function Navbar() {
   // Navbar item
   const navItems = [
     { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
     { name: "Works", href: "#works" },
-    { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
+    { name: "About", href: "#about" },
+    { name: "Blog", href: "#blog" },
   ];
 
   // Navbar scroll
@@ -31,29 +32,39 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-all duration-300",
+        "fixed top-0 inset-x-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-white/10 backdrop-blur-md border-b border-white/10"
+          ? "bg-white/40 backdrop-blur-lg border-b border-white/20 shadow-sm"
           : "bg-transparent"
       )}
     >
       <div className="w-full px-10 sm:px-30 flex items-center justify-between py-4">
         <a href="#hero" className="flex items-center gap-4">
           <Image
-            src={Logo}
+            src={scrolled ? Logo2 : Logo}
             alt="Azlin Liana Logo"
             width={40}
             height={40}
-            className="transition-transform duration-300 hover:drop-shadow-[0_0_10px_#d8b4fe]"
-          />        
+            className={cn(
+              "transition duration-300",
+              scrolled
+                ? "drop-shadow-[0_0_15px_#a78bfa]"
+                : "hover:drop-shadow-[0_0_20px_#a78bfa]"
+            )}
+          />
         </a>
 
-        <ul className="hidden lg:flex items-center gap-8 text-white text-md font-medium">
+        <ul className="hidden lg:flex items-center gap-8 text-md font-medium">
           {navItems.map(({ name, href }) => (
             <li key={name}>
               <a
                 href={href}
-                className="text-[#f1f9ff] font-normal hover:text-purple-300 transition duration-200"
+                className={cn(
+                  "font-normal transition duration-200",
+                  scrolled
+                    ? "text-gray-500 hover:text-violet-300"
+                    : "text-[#f1f9ff] hover:text-violet-300"
+                )}
               >
                 {name}
               </a>
@@ -68,9 +79,19 @@ export function Navbar() {
             className="relative z-50 transition-transform duration-300 ease-in-out transform hover:rotate-90"
           >
             {mobileMenuOpen ? (
-              <IconX className="h-6 w-6 text-white" />
+              <IconX
+                className={cn(
+                  "h-6 w-6 transition-colors duration-200",
+                  scrolled ? "text-gray-700 hover:text-violet-300" : "text-[#f1f9ff] hover:text-violet-300"
+                )}
+              />
             ) : (
-              <IconBaselineDensityMedium className="h-6 w-6 text-white" />
+              <IconBaselineDensityMedium
+                className={cn(
+                  "h-6 w-6 transition-colors duration-200",
+                  scrolled ? "text-gray-700 hover:text-violet-300" : "text-[#f1f9ff] hover:text-violet-300"
+                )}
+              />
             )}
           </button>
         </div>
@@ -83,7 +104,7 @@ export function Navbar() {
               key={name}
               href={href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-center text-[#f1f9ff] font-normal hover:text-purple-300 transition duration-200"
+              className="text-center text-[#f1f9ff] font-normal hover:text-violet-300 transition duration-200"
             >
               {name}
             </a>
