@@ -1,7 +1,5 @@
 "use client";
 
-import { TextHoverEffect } from "./ui/text-hover-effect";
-
 type TitleProps = {
   text: string;
   className?: string;
@@ -9,8 +7,15 @@ type TitleProps = {
 
 export default function TitleSection({ text, className = "" }: TitleProps) {
   return (
-    <div className={`h-[6rem] sm:h-[8rem] flex items-center justify-center ${className}`}>
-      <TextHoverEffect text={text} />
+    <div
+      className={`
+        text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl
+        font-semibold tracking-wide 
+        flex items-center justify-center 
+        ${className}`
+      }
+    >
+      {text}
     </div>
   );
 }
