@@ -1,6 +1,3 @@
-import ContentLayout from "@/components/layout/content-layout";
-
-
 import Image from "next/image";
 
 import AstronautSketch from "../public/hero/astronaut-sketch.svg";
