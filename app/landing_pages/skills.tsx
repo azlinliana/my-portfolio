@@ -48,19 +48,9 @@ const skillCards = [
     title: "Front-end",
     subSections: [
       {
-        subTitle: "Languages",
-        skills: [
-          { name: "HTML", icon: htmlLogo, level: "Advanced" },
-          { name: "CSS", icon: cssLogo, level: "Advanced" },
-          { name: "JavaScript", icon: jsLogo, level: "Intermediate" },
-        ],
-      },
-      {
         subTitle: "Frameworks & Libraries",
         skills: [
           { name: "React.js", icon: reactLogo, level: "Intermediate" },
-          { name: "Next.js", icon: nextjsLogo, level: "Beginner" },
-          { name: "Zustand", icon: zustandLogo, level: "Beginner" },
           { name: "Tailwind CSS", icon: tailwindLogo, level: "Advanced" },
           { name: "Bootstrap", icon: bootstrapLogo, level: "Advanced" },
         ],
@@ -69,7 +59,14 @@ const skillCards = [
         subTitle: "Mobile Development",
         skills: [
           { name: "Flutter", icon: flutterLogo, level: "Dormant" },
-          { name: "Android", icon: androidLogo, level: "Dormant" },
+        ],
+      },
+      {
+        subTitle: "Languages",
+        skills: [
+          { name: "HTML", icon: htmlLogo, level: "Advanced" },
+          { name: "CSS", icon: cssLogo, level: "Advanced" },
+          { name: "JavaScript", icon: jsLogo, level: "Intermediate" },
         ],
       },
     ],
@@ -81,9 +78,6 @@ const skillCards = [
         subTitle: "Languages",
         skills: [
           { name: "PHP", icon: phpLogo, level: "Advanced" },
-          { name: "Java", icon: javaLogo, level: "Dormant" },
-          { name: "C", icon: cLogo, level: "Dormant" },
-          { name: "C++", icon: cppLogo, level: "Dormant" },
           { name: "Dart", icon: dartLogo, level: "Dormant" },
         ],
       },
@@ -95,8 +89,6 @@ const skillCards = [
         subTitle: "Databases",
         skills: [
           { name: "MySQL", icon: mysqlLogo, level: "Advanced" },
-          { name: "SQLite", icon: sqliteLogo, level: "Advanced" },
-          { name: "Firebase", icon: firebaseLogo, level: "Dormant" },
         ],
       },
     ],
@@ -116,7 +108,6 @@ const skillCards = [
         skills: [
           { name: "Git", icon: gitLogo, level: "Advanced" },
           { name: "GitHub", icon: githubLogo, level: "Advanced" },
-          { name: "GitLab", icon: gitlabLogo, level: "Intermediate" },
         ],
       },
       {
@@ -144,7 +135,7 @@ export default function Skills() {
 
   return (
     <ContentLayout>
-      <TitleSection text="S K I L L S" />
+      <TitleSection text="Skills" />
       
       <div className="flex flex-col items-justify space-y-12 w-full py-12">
         {/* Tab header */}
@@ -153,16 +144,17 @@ export default function Skills() {
           {tabs.map(({ label, icon: Icon }) => {
             const isActive = activeTab === label;
 
-            return isActive ? (
-              <MagicBorder key={label}>
-                <Icon className="w-5 h-5 mr-2" />
-
-                {label}
-              </MagicBorder>
-            ) : (
+            return (
               <button
                 key={label}
-                className="relative inline-flex h-14 sm:h-12 items-center justify-center gap-2 px-5 py-2 sm:px-3 sm:py-1 text-base sm:text-lg text-white rounded-full bg-slate-950 hover:text-purple-300 transition duration-200"
+                className={`
+                  relative inline-flex h-14 sm:h-12 items-center justify-center gap-2 
+                  px-5 py-2 sm:px-3 sm:py-1 text-base sm:text-lg rounded-full border transition duration-200
+                  ${
+                    isActive
+                      ? "border-violet-300 text-violet-300 font-medium"
+                      : "border-gray-300 text-gray-500 font-medium"
+                  }`}
                 onClick={() => setActiveTab(label)}
               >
                 <Icon className="w-5 h-5" />
@@ -173,43 +165,56 @@ export default function Skills() {
           })}
         </div>
 
-        {/* Mobile: full-width magic border dropdown with icons */}
+        {/* Mobile: full-width dropdown with icons */}
         <div className="sm:hidden w-full relative">
-          <MagicBorder className="w-full">
-            <button
-              onClick={() => setOpenDropdown((prev) => !prev)}
-              className="flex w-full items-center justify-between px-4 py-3 text-base font-medium text-white bg-slate-950"
-            >
-              <div className="flex items-center gap-2">
-                {(() => {
-                  const ActiveIcon = tabs.find((t) => t.label === activeTab)?.icon;
-                  return ActiveIcon ? <ActiveIcon className="w-5 h-5" /> : null;
-                })()}
-                {activeTab}
-              </div>
+          <button
+            onClick={() => setOpenDropdown((prev) => !prev)}
+            className={`
+              flex w-full items-center justify-between px-4 py-3 
+              text-base font-medium rounded-xl border
+              ${activeTab 
+                ? "border-violet-300 text-violet-300" 
+                : "text-gray-500"}
+            `}
+          >
+            <div className="flex items-center gap-2">
+              {(() => {
+                const ActiveIcon = tabs.find((t) => t.label === activeTab)?.icon;
+                return ActiveIcon ? <ActiveIcon className="w-5 h-5" /> : null;
+              })()}
+              {activeTab}
+            </div>
 
-              <IconChevronCompactDown
-                className={`w-5 h-5 transition-transform ${openDropdown ? "rotate-180" : ""}`}
-              />
-            </button>
-          </MagicBorder>
+            <IconChevronCompactDown
+              className={`w-5 h-5 transition-transform ${openDropdown ? "rotate-180" : ""}`}
+            />
+          </button>
 
           {openDropdown && (
-            <div className="mt-1 w-full bg-slate-900 border border-slate-700 shadow-lg rounded-4xl">
-              {tabs.map(({ label, icon: Icon }) => (
-                <button
-                  key={label}
-                  className="flex items-center gap-2 w-full px-4 py-3 text-white hover:bg-slate-800 hover:rounded-4xl transition"
-                  onClick={() => {
-                    setActiveTab(label);
-                    setOpenDropdown(false);
-                  }}
-                >
-                  <Icon className="w-5 h-5" />
+            <div className="mt-1 w-full border border-violet-300 text-gray-300 rounded-xl">
+              {tabs.map(({ label, icon: Icon }) => {
+                const isActive = activeTab === label;
 
-                  {label}
-                </button>
-              ))}
+                return (
+                  <button
+                    key={label}
+                    className={`
+                      flex items-center gap-2 w-full px-4 py-3 rounded-lg font-medium
+                      ${isActive 
+                        ? "border-violet-300 text-violet-300 font-medium" 
+                        : "border-gray-300"}
+                    `}
+                    onClick={() => {
+                      setActiveTab(label);
+                      setOpenDropdown(false);
+                    }}
+                  >
+                    <Icon className="w-5 h-5" />
+                    
+                    {label}
+                  </button>
+                );
+              })}
             </div>
           )}
         </div>
@@ -220,7 +225,7 @@ export default function Skills() {
           .map((section) => (
             <div 
               key={section.title} 
-              className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10"
+              className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-10"
             >
               <AnimatedTooltip
                 items={section.subSections.flatMap((sub) =>
@@ -237,16 +242,22 @@ export default function Skills() {
               >
                 {section.subSections.flatMap((sub) =>
                   sub.skills.map((skill) => (
-                    <div key={skill.name}>
-                      <BackgroundGradient className="flex flex-col items-center justify-center bg-white dark:bg-zinc-900 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow group h-[180px]">
-                        <Image
-                          src={skill.icon}
-                          alt={skill.name}
-                          width={80}
-                          height={80}
-                          className="object-contain"
-                        />
-                      </BackgroundGradient>
+                    <div
+                      key={skill.name}
+                      className="
+                        flex flex-col items-center justify-center 
+                        rounded-xl border border-gray-300
+                        p-6 h-[180px] bg-slate-50
+                        shadow-md
+                      "
+                    >
+                      <Image
+                        src={skill.icon}
+                        alt={skill.name}
+                        width={80}
+                        height={80}
+                        className="object-contain"
+                      />
                     </div>
                   ))
                 )}
@@ -254,6 +265,9 @@ export default function Skills() {
             </div>
           ))}
       </div>
+
+      <div>
+    </div>
     </ContentLayout>
   );
 }
