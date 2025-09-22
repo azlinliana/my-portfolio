@@ -9,6 +9,8 @@ import Astronaut from "../../public/hero/astronaut.svg";
 
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 
+import { IconMail, IconFileCv } from "@tabler/icons-react";
+
 export default function Hero() {
   // Stars
   const [stars, setStars] = useState<{ 
@@ -33,14 +35,8 @@ export default function Hero() {
   const words = [
     { text: "Hi," },
     { text: "I'm" },
-    {
-      text: "Azlin",
-      // className: "text-purple-300 dark:text-purple-300",
-    },
-    {
-      text: "Liana!",
-      // className: "text-purple-300 dark:text-purple-3000",
-    },
+    {text: "Azlin"},
+    {text: "Liana!"},
   ];
 
   return (
@@ -79,27 +75,61 @@ export default function Hero() {
       </div>
 
       {/* Foreground content */}
-      <div className="w-full flex flex-col lg:flex-row items-center justify-between z-10 relative">
+      <div className="w-full flex flex-col-reverse lg:flex-row items-center lg:items-center justify-between z-10 relative gap-10 lg:gap-16">
+        {/* Hero description */}
+        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 px-4 sm:px-6">
+          {/* Typewriter text */}
+          <TypewriterEffect words={words} />
+
+          {/* Description */}
+          <p className="text-[#f1f9ff] text-base sm:text-lg md:text-xl leading-relaxed text-justify lg:text-left max-w-xl">
+            On a mission to craft scalable, adaptable systems — from backend logic to frontend clarity. 
+            Clean code learner. Curious mind. Problem solver at heart.
+          </p>
+
+          {/* Contact & CV/Resume buttons */}
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+            {/* Contact */}
+            <a
+              href="https://mail.google.com/mail/?view=cm&to=azlinliana.adlan@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >            
+              <button className="p-[2px] relative rounded-md overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 -z-10" />
+                
+                <div className="px-8 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-md text-white font-semibold transition duration-200 flex items-center gap-2 group-hover:opacity-90 group-hover:scale-[1.02]">
+                  <IconMail /> Contact
+                </div>
+              </button>
+            </a>
+
+
+            {/* CV/Resume */}
+            <a
+              href="https://drive.google.com/file/d/1vdLO3oSBu14SFFhdY1UPgbG91foWHEja/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >   
+              <button className="p-[2px] relative rounded-md overflow-hidden group">
+                <div className="absolute inset-0 bg-white/10 -z-10" />
+                <div className="px-8 py-2 rounded-md text-white font-semibold transition duration-200 flex items-center gap-2 bg-white/5 group-hover:scale-[1.02]">
+                  <IconFileCv /> CV/Resume
+                </div>
+              </button>
+            </a>
+          </div>
+        </div>
+
         {/* Astronaut image */}
-        <div className="w-full lg:w-1/2 flex justify-center order-1 lg:order-2">
+        <div className="w-full lg:w-1/2 flex justify-center">
           <Image
             src={Astronaut}
             alt="Astronaut Illustration"
-            className="w-full"
+            className="w-[70%] sm:w-[60%] md:w-[80%] lg:w-[90%] max-w-[450px] h-auto"
             style={{ animation: "float 4s ease-in-out infinite" }}
+            priority
           />
-        </div>
-
-        {/* Hero description */}
-        {/* Text & typewriter */}
-        <div className="w-full lg:w-1/2 order-2 lg:order-1 flex flex-col items-center lg:items-start text-left">
-          <TypewriterEffect words={words} />
-
-          <p className="mt-5 text-[#f1f9ff] text-base sm:text-lg md:text-xl text-justify leading-relaxed">
-            On a mission to craft scalable, adaptable systems — from backend
-            logic to frontend clarity. Clean code learner. Curious mind. Problem
-            solver at heart.
-          </p>
         </div>
       </div>
 
