@@ -16,10 +16,10 @@ export function Navbar() {
   // Navbar item
   const navItems = [
     { name: "Home", href: "#hero" },
-    { name: "Works", href: "#works" },
-    { name: "Projects", href: "#projects" },
-    { name: "About", href: "#about" },
-    { name: "Blog", href: "#blog" },
+    // { name: "Works", href: "#works" },
+    // { name: "Projects", href: "#projects" },
+    // { name: "About", href: "#about" },
+    // { name: "Blog", href: "#blog" },
   ];
 
   // Navbar scroll
