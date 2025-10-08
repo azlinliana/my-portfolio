@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 
 import "./globals.css";
 
+import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
 
 const inter = Inter({
@@ -26,6 +27,8 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased`}
       >
+        <Navbar />
+        
         {children}
 
         <Footer />
