@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 
 import Image from "next/image";
 
-import HeroBackground from "../../public/hero/hero-bg.svg";
-import Astronaut from "../../public/hero/astronaut.svg";
+import HeroBackground from "../../../public/hero/hero-bg.svg";
+import Astronaut from "../../../public/hero/astronaut.svg";
 
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 
-export default function Hero() {
+export default function Home() {
   // Stars
   const [stars, setStars] = useState<{ 
     top: string; 
