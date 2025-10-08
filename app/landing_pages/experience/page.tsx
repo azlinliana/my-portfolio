@@ -99,7 +99,7 @@ export default function Experience() {
               <time
                 className={`
                   inline-block px-3 py-1 mb-2 text-xs font-semibold uppercase rounded-full
-                  ${activeIndex === index ? "bg-violet-300 text-white" : "bg-gray-300 text-gray-500"}
+                  ${activeIndex === index ? "bg-gradient-to-r from-[#9b8cfb] via-[#7d6df7] to-[#5c5ce6] text-white" : "bg-gray-300 text-gray-500"}
                 `}
               >
                 {item.dateStart} – {item.dateEnd}

@@ -1,15 +1,11 @@
-import { Navbar } from "@/components/navbar";
-
-import Hero from "./landing_pages/hero";
-import Experience from "./landing_pages/experience";
-import Skills from "./landing_pages/skills";
+import Home from "./landing_pages/home/page";
+import Experience from "./landing_pages/experience/page";
+import Skills from "./landing_pages/skills/page";
 
 export default function Page() {
   return (
     <>
-      <Navbar />
-      
-      <Hero />
+      <Home />
 
       <Experience />
 
