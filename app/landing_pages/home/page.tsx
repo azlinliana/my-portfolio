@@ -9,7 +9,7 @@ import Astronaut from "../../../public/hero/astronaut.svg";
 
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 
-import { IconMail, IconFileCv } from "@tabler/icons-react";
+import { IconBrandGithub, IconFileCv } from "@tabler/icons-react";
 
 export default function Home() {
   // Stars
@@ -87,11 +87,11 @@ export default function Home() {
             Clean code learner. Curious mind. Problem solver at heart.
           </p>
 
-          {/* Contact & CV/Resume buttons */}
+          {/* Github & CV/Resume buttons */}
           <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
-            {/* Contact */}
+            {/* Github */}
             <a
-              href="https://mail.google.com/mail/?view=cm&to=azlinliana.adlan@gmail.com"
+              href="https://github.com/azlinliana"
               target="_blank"
               rel="noopener noreferrer"
             >            
@@ -99,7 +99,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 -z-10" />
                 
                 <div className="px-8 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-md text-white font-semibold transition duration-200 flex items-center gap-2 group-hover:opacity-90 group-hover:scale-[1.02]">
-                  <IconMail /> Contact
+                  <IconBrandGithub /> GitHub
                 </div>
               </button>
             </a>
