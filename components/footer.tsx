@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
     return (
-        <main className="px-10 sm:px-30 bg-gradient-to-r from-[#5850ee] via-[#6d5bff] to-[#4f46e5]">
+        <main className="px-10 sm:px-30 bg-gradient-to-r from-[#9b8cfb] via-[#7d6df7] to-[#5c5ce6]">
             <div className="flex flex-col items-center justify-center text-center text-white">
                 <footer className="relative py-12 w-full">
                     <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 px-6 sm:px-8 lg:px-12">
