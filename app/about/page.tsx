@@ -15,7 +15,7 @@ import {
 export default function About() {
     return (
         <ContentLayout>
-            <TitleSection text="A B O U T" />
+            <TitleSection text="About" />
 
             <div className="flex flex-col items-center justify-center text-center space-y-12 w-full py-12">
                 {/* Avatar + info section */}
@@ -30,15 +30,15 @@ export default function About() {
                         />
 
                         {/* Online indicator */}
-                        <span className="absolute bottom-3 right-3 w-5 h-5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full" />
+                        <span className="absolute bottom-3 right-3 w-5 h-5 bg-green-400 border-2 border-white border-gray-800 rounded-full" />
                     </div>
 
                     {/* Name */}
-                    <h1 className="text-2xl sm:text-3xl md:text-3xl font-bold text-gray-900 dark:text-white">
+                    <h1 className="text-2xl sm:text-3xl md:text-3xl font-bold">
                         NUR AZLIN LIANA BINTI MOHD ADLAN
                     </h1>
 
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 text-gray-600 dark:text-gray-300 text-base sm:text-lg">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-3">
                         {/* Email */}
                         <div className="flex items-center gap-1">
                             <IconMail className="w-5 h-5" />
@@ -47,7 +47,7 @@ export default function About() {
                                 href="https://mail.google.com/mail/?view=cm&to=azlinliana.adlan@gmail.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="hover:underline text-sm sm:text-base text-white"
+                                className="hover:underline"
                             >
                                 <span>Email</span>
                             </a>
@@ -63,7 +63,7 @@ export default function About() {
                                 href="https://www.linkedin.com/in/azlinliana/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-1 hover:underline text-sm sm:text-base text-white"
+                                className="flex items-center gap-1 hover:underline"
                             >                                
                                 <span>LinkedIn</span>
                             </a>
@@ -79,7 +79,7 @@ export default function About() {
                                 href="https://github.com/azlinliana"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-1 hover:underline text-sm sm:text-base text-white"
+                                className="flex items-center gap-1 hover:underline"
                             >                                
                                 <span>GitHub</span>
                             </a>
@@ -95,7 +95,7 @@ export default function About() {
                                 href="https://drive.google.com/file/d/1vdLO3oSBu14SFFhdY1UPgbG91foWHEja/view?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-1 hover:underline text-sm sm:text-base text-white"
+                                className="flex items-center gap-1 hover:underline"
                             >                                
                                 <span>CV / Resume</span>
                             </a>
@@ -105,43 +105,24 @@ export default function About() {
 
                 {/* About description */}
                 <div className="text-justify space-y-6">
-                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed text-justify">
-                        A developer on a journey to understand how things work and how to make them work better.
-                        Passionate about crafting systems that are scalable, adaptable, and thoughtfully structured —
-                        from back-end logic to front-end experience.
-                    </p>
+                <p className="leading-relaxed text-justify">
+                    I’m currently working at <span className="font-medium">Amanah Ikhtiar Malaysia</span>. 
+                    My work centers on designing and building reliable, scalable, and well-structured backend systems 
+                    that integrate smoothly with frontend applications to deliver meaningful user experiences.
+                </p>
 
-                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed text-justify">
-                        Driven by curiosity and intention. I learn through building, write cleaner code with every project, 
-                        and focus on solving problems that matter. Good software should be quiet, helpful, and built with care. 
-                        That’s the kind of work I aim to contribute to.
-                    </p>
+                <p className="leading-relaxed text-justify">
+                    I’m passionate about understanding how systems work — and how to make them work better. 
+                    Each project I build sharpens my ability to write cleaner, more intentional code and to design 
+                    architectures that balance performance, maintainability, and clarity.
+                </p>
 
-                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed text-justify">
-                        I embrace challenges as chances to grow, experiment, and iterate. I value clarity, simplicity, 
-                        and thoughtful architecture, believing that well-crafted code tells a story. Collaboration and 
-                        learning from others guide me, because the best solutions rarely come alone.
-                    </p>
-
-                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed text-justify">
-                        Not here to do everything — just the right things, done well. Step by step, layer by layer, 
-                        carefully building each piece with intention and care. Like any mission worth launching, I 
-                        focus on thoughtful planning, precise execution, and continuous improvement — making sure 
-                        every part fits, every decision matters, and the end result is something resilient, 
-                        purposeful, and meaningful.
-                    </p>
-
-                    <div className="mt-8 flex flex-col items-center space-y-3">
-                        {/* Top stardust line */}
-                        <div className="text-center text-2xl text-purple-400 dark:text-purple-300 animate-pulse">
-                            ˗ˏˋ ★ ˎˊ˗
-                        </div>
-
-                        {/* Quote */}
-                        <blockquote className="text-center text-lg sm:text-xl italic text-purple-300 dark:text-purple-300 max-w-2xl px-4">
-                        &quot;Every line of code is a star in the universe I’m creating — small, intentional, and capable of lighting the way.&quot;
-                        </blockquote>
-                    </div>
+                <p className="leading-relaxed text-justify">
+                    I value collaboration, thoughtful problem-solving, and continuous improvement. 
+                    For me, software development isn’t just about writing code — it’s about building 
+                    systems that are purposeful, dependable, and built to grow. 
+                    My goal is to keep evolving as a developer who crafts solutions that make a real impact.
+                </p>
                 </div>
             </div>
         </ContentLayout>
