@@ -87,8 +87,25 @@ export default function Home() {
             Clean code learner. Curious mind. Problem solver at heart.
           </p>
 
-          {/* Github & CV/Resume buttons */}
+          {/* CV/Resume & Github buttons */}
           <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+            {/* CV/Resume */}
+            <a
+              href="https://drive.google.com/file/d/1vdLO3oSBu14SFFhdY1UPgbG91foWHEja/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >   
+            
+              <button className="p-[2px] relative rounded-md overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 -z-10" />
+                
+                <div className="px-8 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-md text-white font-semibold transition duration-200 flex items-center gap-2 group-hover:opacity-90 group-hover:scale-[1.02]">
+                  <IconFileCv /> CV/Resume
+                </div>
+              </button>
+            </a>
+
+
             {/* Github */}
             <a
               href="https://github.com/azlinliana"
@@ -96,25 +113,9 @@ export default function Home() {
               rel="noopener noreferrer"
             >            
               <button className="p-[2px] relative rounded-md overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 -z-10" />
-                
-                <div className="px-8 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-md text-white font-semibold transition duration-200 flex items-center gap-2 group-hover:opacity-90 group-hover:scale-[1.02]">
-                  <IconBrandGithub /> GitHub
-                </div>
-              </button>
-            </a>
-
-
-            {/* CV/Resume */}
-            <a
-              href="https://drive.google.com/file/d/1vdLO3oSBu14SFFhdY1UPgbG91foWHEja/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-            >   
-              <button className="p-[2px] relative rounded-md overflow-hidden group">
                 <div className="absolute inset-0 bg-white/10 -z-10" />
                 <div className="px-8 py-2 rounded-md text-white font-semibold transition duration-200 flex items-center gap-2 bg-white/5 group-hover:scale-[1.02]">
-                  <IconFileCv /> CV/Resume
+                  <IconBrandGithub /> GitHub
                 </div>
               </button>
             </a>
