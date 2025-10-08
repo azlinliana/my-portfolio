@@ -14,32 +14,32 @@ import {
   IconChevronCompactDown
 } from "@tabler/icons-react";
 
-import htmlLogo from "../../public/skills/html-logo.svg";
-import cssLogo from "../../public/skills/css-logo.svg";
-import jsLogo from "../../public/skills/javascript-logo.svg";
-import reactLogo from "../../public/skills/react-logo.svg";
-// import nextjsLogo from "../../public/skills/nextjs-logo.svg";
-// import zustandLogo from "../../public/skills/zustand-logo.svg";
-import tailwindLogo from "../../public/skills/tailwind-logo.svg";
-import bootstrapLogo from "../../public/skills/bootstrap-logo.svg";
-import flutterLogo from "../../public/skills/flutter-logo.svg";
-// import androidLogo from "../../public/skills/android-logo.svg";
-import phpLogo from "../../public/skills/php-logo.svg";
-// import javaLogo from "../../public/skills/java-logo.svg";
-// import cLogo from "../../public/skills/c-logo.svg";
-// import cppLogo from "../../public/skills/cpp-logo.svg";
-import dartLogo from "../../public/skills/dart-logo.svg";
-import laravelLogo from "../../public/skills/laravel-logo.svg";
-import mysqlLogo from "../../public/skills/mysql-logo.svg";
-// import sqliteLogo from "../../public/skills/sqlite-logo.svg";
-// import firebaseLogo from "../../public/skills/firebase-logo.svg";
-import kubernetsLogo from "../../public/skills/kubernets-logo.svg";
-import dockerLogo from "../../public/skills/docker-logo.svg";
-import gitLogo from "../../public/skills/git-logo.svg";
-import githubLogo from "../../public/skills/github-logo.svg";
-// import gitlabLogo from "../../public/skills/gitlab-logo.svg";
-import postmanLogo from "../../public/skills/postman-logo.svg";
-import figmaLogo from "../../public/skills/figma-logo.svg";
+import htmlLogo from "../../../public/skills/html-logo.svg";
+import cssLogo from "../../../public/skills/css-logo.svg";
+import jsLogo from "../../../public/skills/javascript-logo.svg";
+import reactLogo from "../../../public/skills/react-logo.svg";
+// import nextjsLogo from "../../../public/skills/nextjs-logo.svg";
+// import zustandLogo from "../../../public/skills/zustand-logo.svg";
+import tailwindLogo from "../../../public/skills/tailwind-logo.svg";
+import bootstrapLogo from "../../../public/skills/bootstrap-logo.svg";
+import flutterLogo from "../../../public/skills/flutter-logo.svg";
+// import androidLogo from "../../../public/skills/android-logo.svg";
+import phpLogo from "../../../public/skills/php-logo.svg";
+// import javaLogo from "../../../public/skills/java-logo.svg";
+// import cLogo from "../../../public/skills/c-logo.svg";
+// import cppLogo from "../../../public/skills/cpp-logo.svg";
+import dartLogo from "../../../public/skills/dart-logo.svg";
+import laravelLogo from "../../../public/skills/laravel-logo.svg";
+import mysqlLogo from "../../../public/skills/mysql-logo.svg";
+// import sqliteLogo from "../../../public/skills/sqlite-logo.svg";
+// import firebaseLogo from "../../../public/skills/firebase-logo.svg";
+import kubernetsLogo from "../../../public/skills/kubernets-logo.svg";
+import dockerLogo from "../../../public/skills/docker-logo.svg";
+import gitLogo from "../../../public/skills/git-logo.svg";
+import githubLogo from "../../../public/skills/github-logo.svg";
+// import gitlabLogo from "../../../public/skills/gitlab-logo.svg";
+import postmanLogo from "../../../public/skills/postman-logo.svg";
+import figmaLogo from "../../../public/skills/figma-logo.svg";
 
 const skillCards = [
   {
