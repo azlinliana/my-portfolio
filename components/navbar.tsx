@@ -22,7 +22,7 @@ export function Navbar() {
   // Navbar item
   const navItems = [
     { name: "Home", href: "/" },
-    // { name: "Works", href: "#works" },
+    { name: "Works", href: "/works" },
     { name: "Projects", href: "/projects" },
     { name: "About", href: "/about" },
     { name: "Blog", href: "https://medium.com/@azlinliana", external: true},
