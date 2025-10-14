@@ -19,8 +19,6 @@ import {
   IconChevronRight
 } from "@tabler/icons-react";
 
-import Logo3 from "../../../public/logo-3.svg";
-
 import LoanCover from "../../../public/works/loan/loan-cover.svg";
 
 export default function Works() {
