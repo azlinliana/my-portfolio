@@ -1,8 +1,7 @@
 import ContentLayout from "@/components/layout/content-layout";
 import TitleSection from "@/components/title-section";
 
-import Image
- from "next/image";
+import Image from "next/image";
 import Logo from "../../public/logo-4.svg";
 
 import {
@@ -39,7 +38,6 @@ export default function About() {
                         {/* Email */}
                         <div className="flex items-center gap-1">
                             <IconMail className="w-5 h-5" />
-
                             <a
                                 href="https://mail.google.com/mail/?view=cm&to=azlinliana.adlan@gmail.com"
                                 target="_blank"
@@ -55,7 +53,6 @@ export default function About() {
                         {/* LinkedIn */}
                         <div className="flex items-center gap-1">
                             <IconBrandLinkedin className="w-5 h-5" />
-
                             <a
                                 href="https://www.linkedin.com/in/azlinliana/"
                                 target="_blank"
@@ -71,7 +68,6 @@ export default function About() {
                         {/* GitHub */}
                         <div className="flex items-center gap-1">
                             <IconBrandGithub className="w-5 h-5" />
-                            
                             <a
                                 href="https://github.com/azlinliana"
                                 target="_blank"
@@ -87,7 +83,6 @@ export default function About() {
                         {/* CV/Resume */}
                         <div className="flex items-center gap-1">
                             <IconFileCv className="w-5 h-5" />
-
                             <a
                                 href="https://drive.google.com/file/d/1vdLO3oSBu14SFFhdY1UPgbG91foWHEja/view?usp=sharing"
                                 target="_blank"
@@ -105,7 +100,7 @@ export default function About() {
                     <h2 className="text-2xl font-semibold flex items-center gap-2">Who I am?</h2>
 
                     <p className="leading-relaxed text-gray-700 space-y-2">
-                        I’m a <span className="font-medium">backend-focused software developer</span> at 
+                        I&apos;m a <span className="font-medium">backend-focused software developer</span> at 
                         <span className="font-medium"> Amanah Ikhtiar Malaysia</span>. 
                         I primarily work with <span className="font-medium">Laravel</span> and <span className="font-medium">React </span> 
                         to build internal systems that support daily operations. My work ranges from designing backend APIs 
@@ -118,8 +113,8 @@ export default function About() {
                     <p className="leading-relaxed text-gray-700 space-y-2">
                         I focus on <span className="font-medium">clarity</span> and <span className="font-medium">purpose</span> in every project. 
                         I prefer practical solutions over unnecessary complexity and aim to write code that is maintainable and scalable. 
-                        Collaboration is important to me — I work closely with teammates, ask questions, and make sure real user needs are addressed. 
-                        I also value continuous learning, whether it’s exploring new tools, improving coding habits, or learning from past experiences.
+                        Collaboration is important to me &mdash; I work closely with teammates, ask questions, and make sure real user needs are addressed. 
+                        I also value continuous learning, whether it&apos;s exploring new tools, improving coding habits, or learning from past experiences.
                     </p>
 
                     <h2 className="text-2xl font-semibold flex items-center gap-2">What I value?</h2>
@@ -131,7 +126,7 @@ export default function About() {
                         Beyond technical skills, I also value curiosity, empathy, and understanding the bigger picture in every project.
                     </p>
 
-                    <h2 className="text-2xl font-semibold flex items-center gap-2">Where I'm headed?</h2>
+                    <h2 className="text-2xl font-semibold flex items-center gap-2">Where I&apos;m headed?</h2>
 
                     <p className="leading-relaxed text-gray-700 space-y-2">
                         I aim to grow as a developer who can take on larger, more complex challenges, improve system architecture, 
